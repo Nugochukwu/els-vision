@@ -43,7 +43,7 @@ export const products: Product[] = [
   },
   {
     id: '3', slug: 'noir-wide-leg-trousers',
-    name: 'Noir Wide-Leg Trousers', subtitle: 'Power Tailoring',
+    name: 'EL', subtitle: 'Power Tailoring',
     image: '/assets/images/chubi4.png',
     price: 165, emoji: '👖',
     bgClass: 'bg-gradient-to-br from-[#0D1B2A] to-[#1B2838]',

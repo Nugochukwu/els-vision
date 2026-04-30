@@ -67,11 +67,11 @@ export function CartDrawer() {
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <p className="font-serif text-base">{item.product.name}</p>
+                    <p className="font-serif text-black text-base">{item.product.name}</p>
                     <p className="text-[12px] text-muted mt-0.5">
                       Size: {item.size}
                     </p>
-                    <p className="text-[13px] font-medium mt-1">
+                    <p className="text-[13px] text-black font-medium mt-1">
                       ${item.product.price}
                     </p>
 
@@ -128,14 +128,14 @@ export function CartDrawer() {
               </div>
             </div>
 
-            <div className="flex justify-between font-medium text-[15px] mb-5 pt-3 border-t border-border">
+            <div className="flex justify-between font-medium text-[15px] text-black mb-5 pt-3 border-t border-border">
               <span>Total</span>
               <span>${total.toFixed(2)}</span>
             </div>
 
             <button
               onClick={() => { closeCart(); router.push('/cart') }}
-              className="w-full py-4 bg-warm text-white text-[12px] tracking-widest uppercase rounded-sm hover:bg-warm-dark transition-all cursor-pointer border-none mb-2"
+              className="w-full py-4 bg-warm text-black text-[12px] tracking-widest uppercase rounded-sm hover:bg-warm-dark transition-all cursor-pointer hover:border-b mb-2"
             >
               Checkout
             </button>

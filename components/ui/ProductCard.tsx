@@ -15,12 +15,15 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
 
         {/* Image — fills the card */}
         <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 33vw"
-        />
+  src={product.image}
+  alt={product.name}
+  fill
+  className="object-cover transition-transform duration-700 group-hover:scale-105"
+  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"  // ← tells Next.js to serve smaller images on mobile
+  quality={80}       // ← reduces file size with minimal visual difference
+  placeholder="blur" // ← shows a blur while loading instead of blank space
+  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+/>
 
         {/* Overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />

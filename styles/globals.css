@@ -171,3 +171,23 @@ body::before {
 .line-draw {
   animation: line-draw 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
+
+/* Add this to your globals.css */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Disable the heaviest animations on mobile */
+@media (max-width: 768px) {
+  .animate-spin-slow,
+  .animate-counter-spin { 
+    animation: none; 
+  }
+  .animate-float {
+    animation-duration: 10s; /* slow it down instead of removing */
+  }
+}
