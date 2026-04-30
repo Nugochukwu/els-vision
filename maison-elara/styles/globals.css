@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-outfit: 'Outfit', sans-serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-obsidian text-pearl font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { @apply font-serif; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 bg-gold text-obsidian px-8 py-3.5
+           text-xs tracking-widest uppercase font-medium overflow-hidden
+           transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]
+           rounded-sm cursor-pointer border-none;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 bg-transparent text-pearl px-8 py-3.5
+           text-xs tracking-widest uppercase border border-pearl/30
+           transition-all duration-300 hover:border-gold hover:text-gold
+           rounded-sm cursor-pointer;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 bg-transparent text-pearl px-8 py-3.5
+           text-xs tracking-widest uppercase border border-pearl/20
+           transition-all duration-300 hover:bg-gold hover:text-obsidian hover:border-gold
+           rounded-sm cursor-pointer;
+  }
+
+  .form-input {
+    @apply w-full px-3.5 py-3 border border-white/10 rounded-sm font-sans text-sm
+           bg-white/5 text-pearl transition-all duration-200
+           focus:outline-none focus:border-gold focus:bg-white/10;
+  }
+
+  .form-label {
+    @apply block text-[11px] tracking-widest uppercase text-pearl/50 mb-1.5;
+  }
+
+  .section-tag {
+    @apply text-[11px] tracking-widest text-gold uppercase mb-3 inline-block;
+  }
+
+  .card-hover {
+    transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 30px rgba(212,175,55,0.12);
+  }
+
+  .border-shimmer {
+    border: 0.5px solid rgba(212,175,55,0.2);
+    transition: border-color 0.3s;
+  }
+  .border-shimmer:hover { border-color: rgba(212,175,55,0.6); }
+
+  .underline-grow { position: relative; }
+  .underline-grow::after {
+    content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 1px; background: #D4AF37;
+    transition: width 0.3s ease;
+  }
+  .underline-grow:hover::after { width: 100%; }
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-inner { animation: marquee-scroll 25s linear infinite; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fade-up 0.8s ease forwards; }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fade-in { animation: fade-in 0.7s ease forwards; }
+
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-left { animation: slide-left 0.8s ease forwards; }
+
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.animate-slide-right { animation: slide-right 0.8s ease forwards; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  33%     { transform: translateY(-14px) rotate(1.5deg); }
+  66%     { transform: translateY(-7px) rotate(-1deg); }
+}
+.animate-float { animation: float 7s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.animate-spin-slow { animation: spin-slow 22s linear infinite; }
+
+@keyframes pulse-glow {
+  0%,100% { box-shadow: 0 0 20px rgba(212,175,55,0.15); }
+  50%     { box-shadow: 0 0 55px rgba(212,175,55,0.45); }
+}
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+@keyframes counter-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+.animate-counter-spin { animation: counter-spin 22s linear infinite; }
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.opacity-0 { opacity: 0; }
